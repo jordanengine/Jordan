@@ -20,11 +20,11 @@ Goal: an empty multi-module build that compiles and tests on all three OSes.
   Done when: a module applying only `id("jordan.java-module")` builds and runs tests.
 - [x] **T-0.3 Module skeletons** — create every module from DESIGN §2 (`jordan-network` deferred until post-v1) with a `module-info.java` and an empty package; include them in `settings.gradle.kts`.
   Dep: T-0.2. Done when: `./gradlew build` passes.
-- [ ] **T-0.4 LWJGL natives per OS** — pick native classifiers from `os.name`/`os.arch`.
+- [x] **T-0.4 LWJGL natives per OS** — pick native classifiers from `os.name`/`os.arch`.
   Dep: T-0.1. Done when: the same build works on Windows, macOS (arm64/x64), Linux.
-  Status: implemented in `build-logic/src/main/kotlin/Natives.kt` (LWJGL, jolt-jni, imgui-java); verified on Windows x64, other OSes verified by CI (T-0.5).
-- [ ] **T-0.5 CI** — GitHub Actions matrix (windows/macos/ubuntu) running `./gradlew build`.
-  Dep: T-0.3. Status: `.github/workflows/build.yml` written; runs once the repo is pushed to GitHub.
+  Status: implemented in `build-logic/src/main/kotlin/Natives.kt` (LWJGL, jolt-jni, imgui-java); verified by CI on Windows, macOS (arm64) and Linux.
+- [x] **T-0.5 CI** — GitHub Actions matrix (windows/macos/ubuntu) running `./gradlew build`.
+  Dep: T-0.3. Status: `.github/workflows/build.yml`, green on all three OSes.
 - [x] **T-0.6 Git & repo hygiene** — `git init`, `.gitignore` for `.gradle/`, `build/`, `.idea/`; README pointing at `docs/`; MIT license (Spec D7).
 
 ## M1 — Core kernel (headless)
